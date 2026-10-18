@@ -1,14 +1,7 @@
-import './App.css'
+import TodoList from './TodoList'
 
 function App() {
-  return (
-    <main className="app-shell">
-      <div className="app-card">
-        <h1>New project</h1>
-        <p>Start building here.</p>
-      </div>
-    </main>
-  )
+  return <TodoList />
 }
 
 export default App
