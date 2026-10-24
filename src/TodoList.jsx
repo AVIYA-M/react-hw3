@@ -23,6 +23,14 @@ function TodoList() {
     setTasks((prevTasks) => [...prevTasks, newTask])
   }
 
+  const handleToggleDone = (taskCode) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.code === taskCode ? { ...task, done: true } : task
+      )
+    )
+  }
+
   return (
     <div>
       <h1>רשימת משימות</h1>
@@ -31,7 +39,11 @@ function TodoList() {
 
       <ul>
         {tasks.map((task) => (
-          <TodoItem key={task.code} task={task} />
+          <TodoItem
+            key={task.code}
+            task={task}
+            onToggleDone={handleToggleDone}
+          />
         ))}
       </ul>
     </div>

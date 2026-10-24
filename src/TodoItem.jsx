@@ -3,8 +3,8 @@ function getTaskColor(done) {
   return '#f4a6a6'
 }
 
-function TodoItem({ task }) {
-  const { title, done } = task
+function TodoItem({ task, onToggleDone }) {
+  const { code, title, done } = task
 
   return (
     <li
@@ -20,6 +20,12 @@ function TodoItem({ task }) {
       }}
     >
       <span>{title}</span>
+
+      {!done && (
+        <button type="button" onClick={() => onToggleDone(code)}>
+          המשימה בוצעה
+        </button>
+      )}
     </li>
   )
 }
